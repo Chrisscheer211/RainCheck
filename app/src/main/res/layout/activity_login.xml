@@ -26,7 +26,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.125"
             />
 
         <!-- UserName EditText -->
@@ -36,13 +36,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:hint="@string/userName"
-            android:gravity="center"
+            android:gravity="left"
             android:textSize="20sp"/>
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.125"
             />
 
     </LinearLayout>
@@ -56,7 +56,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.125"
             />
 
         <!-- UserName EditText -->
@@ -66,13 +66,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:hint="@string/passeword"
-            android:gravity="center"
+            android:gravity="left"
             android:textSize="20sp"/>
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.125"
             />
 
     </LinearLayout>
@@ -99,12 +99,16 @@
         <!-- UserName EditText -->
         <Button
             android:id="@+id/login_button"
+            android:textAllCaps="false"
+            android:backgroundTint="#0031FF"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:hint="@string/passeword"
+            android:text="@string/login"
             android:gravity="center"
-            android:textSize="20sp"/>
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:cornerRadius="16dp"/>
 
         <Space
             android:layout_width="0dp"
@@ -117,7 +121,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="1"
         />
 
     <!-- ... -->
@@ -134,12 +138,16 @@
         <!-- Create account button -->
         <Button
             android:id="@+id/button_createAccount"
+            android:textAllCaps="false"
+            android:backgroundTint="#0031FF"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:hint="@string/createAnAccount"
+            android:text="@string/createAnAccount"
             android:gravity="center"
-            android:textSize="20sp" />
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            app:cornerRadius="16dp"/>
 
         <Space
             android:layout_width="0dp"
@@ -149,12 +157,16 @@
         <!-- Forgot password button -->
         <Button
             android:id="@+id/button_forgot"
+            android:textAllCaps="false"
+            android:backgroundTint="#0031FF"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:hint="@string/forgotPassword"
+            android:text="@string/forgotPassword"
             android:gravity="center"
-            android:textSize="20sp" />
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            app:cornerRadius="16dp"/>
 
         <Space
             android:layout_width="0dp"

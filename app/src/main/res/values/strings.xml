@@ -6,6 +6,9 @@
     <string name="userName">UserName</string>
     <string name="passeword">Password</string>
     <string name="createAnAccount">Create an Account</string>
-    <string name="forgotPassword">Forget password?</string>
+    <string name="forgotPassword">Forget password</string>
+
+    <!-- Register Strings -->
+<!--    <string name="createAccount">Create Account</string>-->
 
 </resources>
