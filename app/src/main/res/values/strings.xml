@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RainCheck</string>
+
+    <!-- Login Strings -->
+    <string name="login">Login</string>
+    <string name="userName">UserName</string>
+    <string name="passeword">Password</string>
+    <string name="createAnAccount">Create an Account</string>
+    <string name="forgotPassword">Forget password?</string>
+
 </resources>
