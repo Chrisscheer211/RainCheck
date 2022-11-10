@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:orientation="horizontal">
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="25dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/woo" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="25dp" />
+
+                <!-- Username field -->
+                <EditText
+                    android:id="@+id/userName_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:hint="@string/userName"/>
+
+                <!-- Password field -->
+                <EditText
+                    android:id="@+id/password_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:hint="@string/passeword"/>
+
+                <!-- Confirm password field -->
+                <EditText
+                    android:id="@+id/confirmPassword_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:hint="@string/userName"/>
+
+                <!-- Email field -->
+                <EditText
+                    android:id="@+id/email_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:hint="@string/userName"/>
+
+                <!-- Phone Number field -->
+                <EditText
+                    android:id="@+id/phoneNumber_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:hint="@string/userName"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="100dp" />
+
+                <Button
+                    android:id="@+id/button_forgot"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#0031FF"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="@string/login"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    app:cornerRadius="32dp"/>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25" />
+
+
+</LinearLayout>
