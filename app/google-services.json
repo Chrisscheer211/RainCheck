@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "443666608",
+    "project_id": "bcs421raincheck",
+    "storage_bucket": "bcs421raincheck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443666608:android:93dd7d8c1b3234e4072b75",
+        "android_client_info": {
+          "package_name": "com.example.RainCheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443666608-86u6of5sgk34bur9t5nemaasj8lv3cje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.RainCheck",
+            "certificate_hash": "5ac465a95cd04937e436c168f2c744b320ab4bce"
+          }
+        },
+        {
+          "client_id": "443666608-bgom8eobn64i20d0bjsttu93aml384s9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOx1fR-FQclymTb0UscI23xWSPV7r3rXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443666608-bgom8eobn64i20d0bjsttu93aml384s9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity"
+    android:orientation="vertical">
 
     <Space
         android:layout_width="match_parent"
@@ -13,12 +13,12 @@
         android:layout_weight="0.125"/>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profile_imageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.50"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/rainchecktransparent"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24"
         app:tint="#FF3700B3" />
 
     <Space
@@ -46,7 +46,7 @@
             android:hint="@string/userName"
             android:inputType="textEmailAddress" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password edit text with google material IO -->
     <com.google.android.material.textfield.TextInputLayout
@@ -71,25 +71,28 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.125"/>
+    <!-- Conform password edit text with google material IO -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/conformPasswordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-    <!-- Sign in button with rain check credentials-->
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        android:id="@+id/login_button"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
         android:layout_gravity="center"
-        android:layout_height="50dp"
-        android:layout_width="150dp"
-        android:backgroundTint="@color/blue"
-        app:icon="@drawable/ic_baseline_login_24"
-        app:iconGravity="start"
-        android:text="@string/login"
-        android:textAllCaps="false"
-        android:textSize="13sp"
-        />
+        android:layout_width="350dp"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/conformPassword_editText"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/confirmPasseword"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,10 +104,28 @@
             android:layout_width="25dp"
             android:layout_height="50dp"/>
 
-        <!-- Sign in button with rain check credentials-->
+        <!-- Back to login avtivity button-->
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.Icon"
-            android:id="@+id/rainCheck_createAccount_button"
+            android:id="@+id/return_button"
+            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:backgroundTint="@color/blue"
+            app:icon="@drawable/ic_baseline_undo_24"
+            app:iconGravity="start"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+            />
+
+        <Space
+            android:layout_width="25dp"
+            android:layout_height="50dp"/>
+
+        <!-- Create a new rainCheck account button-->
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/createAccount_button"
             android:layout_height="50dp"
             android:layout_width="150dp"
             android:backgroundTint="@color/blue"
@@ -113,18 +134,7 @@
             android:text="@string/createAccount"
             android:textAllCaps="false"
             android:textSize="13sp"
-        />
-
-        <Space
-            android:layout_width="25dp"
-            android:layout_height="50dp"/>
-
-        <!-- Sign in button with google credentials-->
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/googleSignin_button"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"/>
+            />
 
         <Space
             android:layout_width="25dp"
