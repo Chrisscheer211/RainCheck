@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var gso : GoogleSignInOptions
     private lateinit var gsc : GoogleSignInClient
     private val RC_SIGN_IN = 9001   //DO NOT CHANGE!
-//    private var storageRef = Firebase.storage.reference
+//    private var storageRef = Firebase.storage.reference   //No...
 
     /**
      *
@@ -79,7 +79,8 @@ class LoginActivity : AppCompatActivity() {
          */
         this.binding.loginButton.setOnClickListener {
 
-            this.login()
+            startActivity(Intent(this, HelpActivity::class.java))
+            //this.login()
         }
 
         /**
@@ -102,7 +103,6 @@ class LoginActivity : AppCompatActivity() {
                 .requestEmail()
                 .build()
 
-            //TODO Fix decricated code later
             this.gsc = GoogleSignIn.getClient(this, this.gso)
             startActivityForResult(gsc.signInIntent, RC_SIGN_IN)
         }
@@ -150,7 +150,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     /**
-     * TODO add commend here...
+     *
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -163,7 +163,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     /**
-     * TODO add commend here...
+     *
      */
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
 

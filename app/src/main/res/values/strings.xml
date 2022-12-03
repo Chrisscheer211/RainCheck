@@ -11,4 +11,28 @@
     <string name="createAccount">Register</string>
     <string name="confirmPasseword">Confirm Password</string>
 
+    <!-- Help Activity Strings -->
+    <string name="supportPhoneNumber">(512) 544-1172 </string>
+    <string name="supportEmail">RainCheck@gmail.com</string>
+
+    <!-- Questions -->
+    <string-array name="Questions">
+
+        <item> How to i register to become a user? </item>
+        <item> Where do i changes my password? </item>
+        <item> How to a changes my email? </item>
+        <item> Why is my password not matching? </item>
+        <item> How do a sign in with my google login? </item>
+    </string-array>
+
+    <!-- Answers -->
+    <string-array name="Answers">
+
+        <item> Clicking on the register button on the login and filling out the registration from. </item>
+        <item> On the settings page to changes password. </item>
+        <item> Clicking on the account settings and click change email.. </item>
+        <item> Means the two passwords entered during registration no not match. </item>
+        <item> Clicking on the google signing button at the bottom of the login page. </item>
+    </string-array>
+
 </resources>
