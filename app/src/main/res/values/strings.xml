@@ -7,12 +7,12 @@
 
     <!-- Login Strings -->
     <string name="userName">Email</string>
-    <string name="passeword">Password</string>
+    <string name="password">Password</string>
 
     <!-- Register Strings -->
     <string name="login">Login</string>
     <string name="createAccount">Register</string>
-    <string name="confirmPasseword">Confirm Password</string>
+    <string name="confirmPassword">Confirm Password</string>
 
     <!-- Help Activity Strings -->
     <string name="supportPhoneNumber">(512) 544-1172 </string>
