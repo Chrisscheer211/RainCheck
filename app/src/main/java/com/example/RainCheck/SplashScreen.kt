@@ -1,4 +1,4 @@
-package com.example.RainCheck
+package com.example.raincheck
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
