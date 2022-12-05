@@ -6,31 +6,25 @@ package com.example.RainCheck
 /**
  * Other imported packages.
  */
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.provider.OpenableColumns
-import android.util.Log
-import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import com.example.RainCheck.databinding.ActivityLoginBinding
-import com.google.firebase.auth.FirebaseAuth
 
 /**
  * Google sign in imported packages.
  */
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.RainCheck.databinding.ActivityLoginBinding
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
-import java.io.File
+import com.google.firebase.auth.FirebaseAuth
+
 
 /**
  * Object decluration for login activity.
@@ -79,8 +73,13 @@ class LoginActivity : AppCompatActivity() {
          */
         this.binding.loginButton.setOnClickListener {
 
-            startActivity(Intent(this, HelpActivity::class.java))
-            //this.login()
+            this.saveLogin("userLogin",
+                this.binding.userNameEditText.text.toString(),
+                this.binding.passwordEditText.text.toString())
+
+            this.login()
+
+            //startActivity(Intent(this, HelpActivity::clas
         }
 
         /**
@@ -97,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
         this.binding.googleSigninButton.setOnClickListener {
 
             /**
-             * Setting up google login...
+             * Setting up google login.
              */
             this.gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -178,7 +177,7 @@ class LoginActivity : AppCompatActivity() {
          */
         catch (e: ApiException) {
 
-            Log.w("TAG", "signInResult:failed code=" + e.statusCode)
+            Log.e("TAG", "signInResult:failed code=" + e.statusCode)
             updateUI(null)
         }
     }
@@ -188,6 +187,38 @@ class LoginActivity : AppCompatActivity() {
      */
     private fun updateUI(account: GoogleSignInAccount?) {
 
+        val acc = GoogleSignIn.getLastSignedInAccount(this)
+        this.saveLogin("userLogin", acc?.displayName.toString(), acc?.displayName.toString())
+
         startActivity(Intent(this, SplashScreen::class.java))
+    }
+
+    /**
+     * Saves user login info so that they remain logged in.
+     * (works for both raincheck and google login)
+     */
+    private fun saveLogin(fileName: String, email: String, password: String): Boolean{
+
+        /**
+         * Permit validation.
+         */
+        if(fileName.isEmpty()) return false
+        if(email.isEmpty()) return false
+        if(password.isEmpty()) return false
+
+        /**
+         * Creates the new shared preference to save the users login information.
+         */
+        val sharPref = getSharedPreferences(fileName, MODE_PRIVATE)
+        val edit = sharPref.edit()
+
+        /**
+         * Saves the data to the file.
+         */
+        edit.putString("Email", email)
+        edit.putString("Password", password)
+        edit.apply()
+
+        return true
     }
 }

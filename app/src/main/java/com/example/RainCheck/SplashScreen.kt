@@ -3,6 +3,8 @@ package com.example.RainCheck
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import kotlinx.coroutines.*
 
 class SplashScreen : AppCompatActivity() {

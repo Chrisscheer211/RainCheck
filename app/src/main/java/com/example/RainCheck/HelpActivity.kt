@@ -89,6 +89,14 @@ class HelpActivity : AppCompatActivity() {
 
             this.sendEmail()
         }
+
+        /**
+         * Gose back to the login screen.
+         */
+        this.binding.backButton.setOnClickListener{
+
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
 
     /**

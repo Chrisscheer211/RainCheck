@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.RainCheck">
@@ -16,6 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RainCheck"
         tools:targetApi="31">
+        <activity
+            android:name=".CalanderActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".HelpActivity"
             android:exported="true">
@@ -57,4 +63,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
