@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/material_dynamic_primary10"
     tools:context=".HelpActivity">
 
     <!-- Displays frequently asked questions. -->
@@ -45,6 +46,8 @@
             android:layout_height="match_parent"
             android:layout_weight="0.50"
             android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:gravity="center"
             android:text="@string/supportPhoneNumber"/>
 
@@ -79,9 +82,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.50"
-            android:textSize="12sp"
             android:gravity="center"
-            android:text="@string/supportEmail"/>
+            android:text="@string/supportEmail"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="0dp"

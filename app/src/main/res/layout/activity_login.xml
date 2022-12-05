@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <Space
@@ -16,10 +17,20 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
         android:layout_gravity="center"
+        android:layout_weight="0.5"
         app:srcCompat="@drawable/rainchecktransparent"
         app:tint="@color/drwer_bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="50dp"
+        android:textColor="@color/drwer_bg"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:text="Rain Check"/>
 
     <Space
         android:layout_width="match_parent"
@@ -52,7 +63,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/PasswordLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
+        android:outlineSpotShadowColor="@color/purple_200"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="25dp"
@@ -83,7 +94,7 @@
         android:layout_gravity="center"
         android:layout_height="50dp"
         android:layout_width="150dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/drwer_bg"
         app:icon="@drawable/ic_baseline_login_24"
         app:iconGravity="start"
         android:text="@string/login"
@@ -107,7 +118,7 @@
             android:id="@+id/rainCheck_createAccount_button"
             android:layout_height="50dp"
             android:layout_width="150dp"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/drwer_bg"
             app:icon="@drawable/ic_baseline_account_circle_24"
             app:iconGravity="start"
             android:text="@string/createAccount"
@@ -124,7 +135,8 @@
             android:id="@+id/googleSignin_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            />
 
         <Space
             android:layout_width="25dp"
