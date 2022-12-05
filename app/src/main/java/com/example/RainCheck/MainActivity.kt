@@ -1,5 +1,7 @@
 package com.example.raincheck
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,9 +34,10 @@ class MainActivity : AppCompatActivity() {
 
             it.isChecked = true
 
-            when (it.itemId) {
+            var intent = Intent(this, MainActivity::class.java)
 
-                R.id.nav_home -> replaceFragment(HomeFragment(), it.title.toString())
+            when (it.itemId) {
+                R.id.nav_home -> startActivity(intent)
                 R.id.nav_appointment -> replaceFragment(AppointmentFragment(), it.title.toString())
                 R.id.nav_calendar -> replaceFragment(CalendarFragment(), it.title.toString())
                 R.id.nav_contact -> replaceFragment(ContactFragment(), it.title.toString())
