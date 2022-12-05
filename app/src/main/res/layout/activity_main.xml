@@ -187,16 +187,16 @@
 
     <!--    This blocks out layout design view, comment out to see if needed.-->
 
-<!--            <com.google.android.material.navigation.NavigationView-->
-<!--                android:id="@+id/nav_view"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_gravity="start"-->
-<!--                android:background="@color/drwer_bg"-->
-<!--                android:fitsSystemWindows="true"-->
-<!--                app:headerLayout="@layout/nav_header"-->
-<!--                app:itemIconTint="@color/drwer_font"-->
-<!--                app:itemTextColor="@color/drwer_font"-->
-<!--                app:menu="@menu/nav_menu" />-->
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@color/drwer_bg"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/nav_header"
+                app:itemIconTint="@color/drwer_font"
+                app:itemTextColor="@color/drwer_font"
+                app:menu="@menu/nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

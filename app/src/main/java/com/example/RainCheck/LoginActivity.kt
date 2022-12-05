@@ -101,7 +101,7 @@ class LoginActivity : AppCompatActivity() {
 
             if(it.isSuccessful){
 
-                startActivity(Intent(this, RegisterActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
             }
             else{
 
