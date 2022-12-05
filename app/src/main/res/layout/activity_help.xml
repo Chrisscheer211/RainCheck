@@ -15,6 +15,7 @@
         android:layout_weight="0.75"
         tools:itemCount="2"
         tools:listitem="@layout/question">
+
     </androidx.recyclerview.widget.RecyclerView>
 
     <!-- Support contest information at footer of activity. -->
@@ -46,6 +47,19 @@
             android:textSize="12sp"
             android:gravity="center"
             android:text="@string/supportPhoneNumber"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.0625"/>
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.125"
+            app:tint="@color/purple_700"
+            android:src="@drawable/ic_baseline_undo_24"/>
 
         <Space
             android:layout_width="0dp"

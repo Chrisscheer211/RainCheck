@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:text="Contact"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="60dp"/>
 
 </FrameLayout>

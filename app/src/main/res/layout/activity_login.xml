@@ -19,7 +19,7 @@
         android:layout_weight="0.5"
         android:layout_gravity="center"
         app:srcCompat="@drawable/rainchecktransparent"
-        app:tint="#FF3700B3" />
+        app:tint="@color/drwer_bg" />
 
     <Space
         android:layout_width="match_parent"

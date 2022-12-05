@@ -34,16 +34,18 @@ class MainActivity : AppCompatActivity() {
 
             it.isChecked = true
 
-            var intent = Intent(this, MainActivity::class.java)
+            var intentMain = Intent(this, MainActivity::class.java)
+            var intentCalendar = Intent(this, CalanderActivity::class.java)
+            var intentHelp = Intent(this, HelpActivity::class.java)
 
             when (it.itemId) {
-                R.id.nav_home -> startActivity(intent)
+                R.id.nav_home -> startActivity(intentMain)
                 R.id.nav_appointment -> replaceFragment(AppointmentFragment(), it.title.toString())
-                R.id.nav_calendar -> replaceFragment(CalendarFragment(), it.title.toString())
+                R.id.nav_calendar -> startActivity(intentCalendar)
                 R.id.nav_contact -> replaceFragment(ContactFragment(), it.title.toString())
                 R.id.nav_notification -> replaceFragment(NotificationFragment(), it.title.toString())
                 R.id.nav_settings -> replaceFragment(SettingsFragment(), it.title.toString())
-                R.id.nav_help -> replaceFragment(HelpFragment(), it.title.toString())
+                R.id.nav_help -> startActivity(intentHelp)
             }
             true
         }

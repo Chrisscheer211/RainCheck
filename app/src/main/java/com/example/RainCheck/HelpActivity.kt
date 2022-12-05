@@ -3,6 +3,9 @@
  */
 package com.example.raincheck
 
+/**
+ *
+ */
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
@@ -14,6 +17,7 @@ import com.example.raincheck.databinding.ActivityHelpBinding
 
 class HelpActivity : AppCompatActivity() {
 
+    /*** Attributes.*/
     private lateinit var binding: ActivityHelpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,14 +27,14 @@ class HelpActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        /** Sets up the recyclerview.*/
+        /*** Sets up the recyclerview.*/
         this.binding.recyclerview.layoutManager = LinearLayoutManager(this)
         val data = ArrayList<Question>()
 
         val answers = resources.getStringArray(R.array.Answers)
         val questions = resources.getStringArray(R.array.Questions)
 
-        /** Sets the questions and answers.*/
+        /*** Sets the questions and answers.*/
         for (i in 0..4){
 
             data.add(Question(questions?.get(i).toString(), answers?.get(i).toString()))
@@ -38,39 +42,45 @@ class HelpActivity : AppCompatActivity() {
 
         this.binding.recyclerview.adapter = QuestionAdapter(data)
 
-        /** When clicked, invokes the call support method.*/
+        /*** When clicked, invokes the call support method.*/
         this.binding.supportNumberTextView.setOnClickListener {
 
             this.callSupport()
         }
 
-        /** When clicked, invokes the call support method.*/
+        /*** When clicked, invokes the call support method.*/
         this.binding.supportNumberImageView.setOnClickListener {
 
             this.callSupport()
         }
 
-        /** When clicked, invokes the send email to support method.*/
+        /*** When clicked, invokes the send email to support method.*/
         this.binding.supportEmailImageView.setOnClickListener {
 
             this.sendEmail()
         }
 
-        /** When clicked, invokes the send email to support method.*/
+        /*** When clicked, invokes the send email to support method.*/
         this.binding.supportEmailTextView.setOnClickListener {
 
             this.sendEmail()
         }
+
+        /*** Gose back to the main activity.*/
+        this.binding.backButton.setOnClickListener{
+
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
-    /** Call the support number when clicked.*/
+    /*** Call the support number when clicked. */
     private fun callSupport(): Boolean{
 
         startActivity(Intent(Intent.ACTION_DIAL,Uri.parse("tel:" + "6315441178")))
         return true
     }
 
-    /** Creates a email for the user to fill out and sent.*/
+    /*** Creates a email for the user to fill out and sent.*/
     @SuppressLint("IntentReset")
     private fun sendEmail(): Boolean{
 
@@ -79,7 +89,7 @@ class HelpActivity : AppCompatActivity() {
         mIntent.data = Uri.parse("mailto:")
         mIntent.type = "text/plain"
 
-        /** Sets up the email stuff.*/
+        /*** Sets up the email stuff.*/
         mIntent.putExtra(Intent.EXTRA_EMAIL, "rjgilbride60@gmail.com")
         mIntent.putExtra(Intent.EXTRA_SUBJECT, "Help!!!")
         mIntent.putExtra(Intent.EXTRA_TEXT, "")

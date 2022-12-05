@@ -10,9 +10,8 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/rainchecktransparent"
+        android:icon="@mipmap/ic_launcher_icon_round"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/rainchecktransparent"
         android:supportsRtl="true"
         android:theme="@style/Theme.RainCheck"
         tools:targetApi="31">
@@ -38,19 +37,22 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.raincheck.MainActivity"
-            android:exported="true">
-
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+            android:name="com.example.raincheck.CalanderActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
+        <activity
+            android:name="com.example.raincheck.MainActivity"
+            android:exported="true"></activity>
         <activity
             android:name="com.example.raincheck.SplashScreen"
             android:exported="true">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 </manifest>
