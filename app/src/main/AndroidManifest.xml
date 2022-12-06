@@ -44,6 +44,14 @@
                 android:value="" />
         </activity>
         <activity
+            android:name="com.example.raincheck.CalendarHelper"
+            android:exported="false"
+            tools:ignore="Instantiatable">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.example.raincheck.MainActivity"
             android:exported="true"></activity>
         <activity
