@@ -7,35 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:443666608:android:c70301dd62d56f06072b75",
-        "android_client_info": {
-          "package_name": "com.example.RainCheck"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "443666608-bgom8eobn64i20d0bjsttu93aml384s9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDOx1fR-FQclymTb0UscI23xWSPV7r3rXU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "443666608-bgom8eobn64i20d0bjsttu93aml384s9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:443666608:android:0447a30ffba7d247072b75",
         "android_client_info": {
           "package_name": "com.example.raincheck"

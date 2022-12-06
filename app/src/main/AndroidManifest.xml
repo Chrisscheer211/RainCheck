@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.RainCheck">
+    package="com.example.raincheck">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -9,52 +9,40 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/rainchecktransparent"
+        android:icon="@mipmap/ic_launcher_icon_round"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/rainchecktransparent"
         android:supportsRtl="true"
         android:theme="@style/Theme.RainCheck"
         tools:targetApi="31">
         <activity
             android:name=".CalanderActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="false" />
         <activity
-            android:name=".HelpActivity"
+            android:name="com.example.raincheck.HelpActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AccrountSettingsActivity"
+            android:name="com.example.raincheck.RegisterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.raincheck.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
+            android:name="com.example.raincheck.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.example.raincheck.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

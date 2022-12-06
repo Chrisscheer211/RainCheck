@@ -1,4 +1,4 @@
-package com.example.RainCheck
+package com.example.raincheck
 
 import org.junit.Test
 

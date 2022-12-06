@@ -1,10 +1,8 @@
-package com.example.RainCheck
+package com.example.raincheck
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import kotlinx.coroutines.*
 
 class SplashScreen : AppCompatActivity() {
@@ -19,7 +17,7 @@ class SplashScreen : AppCompatActivity() {
         activityScope.launch {
             delay(4000)
 
-            var intent = Intent(this@SplashScreen, MainActivity::class.java)
+            var intent = Intent(this@SplashScreen, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
