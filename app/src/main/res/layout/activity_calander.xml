@@ -5,20 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/material_dynamic_primary10"
     tools:context=".CalanderActivity">
 
     <!-- Displays the selected date. -->
     <TextView
         android:id="@+id/dateText_textView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="hello"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:textColor="@color/material_dynamic_primary40"
+        android:text="Select a date."/>
 
     <!-- Calendar view. -->
     <CalendarView
         android:id="@+id/calander_calanderView"
-        android:layout_width="match_parent"
-        android:layout_height="500dp">
+        android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
 
     </CalendarView>
 
@@ -27,7 +35,17 @@
         android:id="@+id/button_"
         android:layout_width="150dp"
         android:layout_height="60dp"
+        android:layout_marginTop="30dp"
         android:text="Create Event"
+        android:backgroundTint="@color/drwer_bg"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/back_button_"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Go Back"
         android:backgroundTint="@color/drwer_bg"
         android:layout_gravity="center"/>
 
