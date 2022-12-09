@@ -6,9 +6,12 @@ package com.example.raincheck
 /*** Other imported packages.*/
 
 /*** Google sign in imported packages.*/
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.raincheck.databinding.ActivityLoginBinding
@@ -20,8 +23,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 
-
-/*** Object decluration for login activity.*/
+/*** Object declaration for login activity.*/
 class LoginActivity : AppCompatActivity() {
 
     /*** Firebase attributes.*/
@@ -48,6 +50,8 @@ class LoginActivity : AppCompatActivity() {
         /*** Set up firebase.*/
         this.firebaseAuth = FirebaseAuth.getInstance()
 
+        //val tvEmail: EditText = findViewById(R.id.userName_editText)
+
         /*** Log's in to rainCheck with the rainCheck credentials.*/
         this.binding.loginButton.setOnClickListener {
 
@@ -55,9 +59,21 @@ class LoginActivity : AppCompatActivity() {
                 this.binding.userNameEditText.text.toString(),
                 this.binding.passwordEditText.text.toString())
 
-            this.login()
+            /*** Save's user's information to show on Drawer*/
+            val sharedPref = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
 
-            //startActivity(Intent(this, HelpActivity::clas
+            binding.apply{
+
+                val email = userNameEditText.text.toString()
+
+                editor.apply{
+                    putString("EMAIL", email)
+                    apply()
+                }
+            }
+
+            this.login()
         }
 
         /*** Enable account creation and changes to the create account activity.*/
@@ -104,11 +120,9 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
             }
             else{
-
                 Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
             }
         }
-
         return false
     }
 

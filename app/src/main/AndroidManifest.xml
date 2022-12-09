@@ -37,7 +37,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.raincheck.CalanderActivity"
+            android:name="com.example.raincheck.CalendarActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

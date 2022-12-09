@@ -9,7 +9,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/profilepic"
+        android:src="@drawable/ic_baseline_account_circle_24"
         />
     
 <TextView
@@ -18,15 +18,16 @@
     android:layout_height="wrap_content"
     android:paddingTop="8dp"
     android:textSize="20dp"
-    android:text="Chris Scheer"
+    android:text="Default Name"
     android:textColor="@color/drwer_font"
     android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/email_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16dp"
-        android:text="chrisscheer211@gmail.com"
+        android:text="email@gmail.com"
         android:textColor="@color/drwer_font"/>
 
 </LinearLayout>

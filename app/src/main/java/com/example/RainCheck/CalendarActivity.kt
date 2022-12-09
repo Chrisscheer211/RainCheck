@@ -8,13 +8,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CalendarView
+import android.widget.Toast
 import com.example.raincheck.databinding.ActivityCalanderBinding
+import java.time.LocalDate
 
-class CalanderActivity : AppCompatActivity() {
+class CalendarActivity : AppCompatActivity() {
 
     /*** Private Attributes.*/
     private lateinit var binding: ActivityCalanderBinding
-    private lateinit var calander: CalendarHelper
+    private lateinit var calendar: CalendarHelper
 
     private lateinit var dateString: String
 
@@ -30,18 +32,29 @@ class CalanderActivity : AppCompatActivity() {
             CalendarView.OnDateChangeListener { view, year, month, dayOfMonth ->
 
                 /*** Converts the date to the string that is used later.*/
-                this.dateString = (year.toString() + "-" + (month + 1) + "-" + dayOfMonth.toString())
-                this.binding.dateTextTextView.setText(dateString)
+                this.dateString =
+                    (year.toString() + "-" + (month + 1) + "-" + dayOfMonth.toString())
+
+                this.binding.dateTextTextView.text = dateString
             }
         )
 
         this.binding.button.setOnClickListener {
 
-            this.calander = CalendarHelper()
-            this.calander.setDateWithString(this.dateString + "T09:00:00", this.dateString + "T12:00:00")
-            //this.calander.setDateWithString("2022-02-1T09:00:00", "2022-02-1T12:00:00")
+            if (binding.dateTextTextView.text == "Select a date.") {
+                Toast.makeText(
+                    this, "Select a date!!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
 
-            startActivity(this.calander.createCalendarEvent("RainCheck Appointment"))
+                this.calendar = CalendarHelper()
+                this.calendar.setDateWithString(
+                    this.dateString + "T09:00:00",
+                    this.dateString + "T12:00:00"
+                )
+                startActivity(this.calendar.createCalendarEvent("RainCheck Appointment"))
+            }
         }
 
         this.binding.backButton.setOnClickListener {

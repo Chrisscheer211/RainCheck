@@ -8,26 +8,18 @@ import java.util.*
 class CalendarHelper {
 
 
-    /**
-     * Private Attributes.
-     */
+    /*** Private Attributes.*/
     private lateinit var sTime: Date    //Start time.
     private lateinit var eTime: Date    //End time.
 
-    /**
-     * Set the date with a string representation.
-     */
+    /*** Set the date with a string representation.*/
     public fun setDateWithString(sDate: String, eDate:String): Boolean{
 
-        /**
-         *
-         */
+
         if(sDate.equals(null)) return false
         if(eDate.equals(null)) return false
 
-        /**
-         * Test the follows block of code to NullPointerException or IllegalArgumentException.
-         */
+        /*** Test the follows block of code to NullPointerException or IllegalArgumentException.*/
         try {
 
             val mSimpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -35,9 +27,6 @@ class CalendarHelper {
             this.eTime = mSimpleDateFormat.parse(eDate) as Date
         }
 
-        /**
-         *
-         */
         catch (e: java.lang.Exception){
 
             Log.e("Calander", e.toString())
@@ -47,19 +36,13 @@ class CalendarHelper {
         return true
     }
 
-    /**
-     * Set calendar event.
-     */
+    /*** Set calendar event.*/
     public fun createCalendarEvent(title: String): Intent {
 
-        /**
-         *
-         */
+        /****/
         val mIntent: Intent = Intent(Intent.ACTION_EDIT)
 
-        /**
-         *
-         */
+        /****/
         if(title.isNotEmpty()){
 
             mIntent.type = "vnd.android.cursor.item/event"
@@ -73,10 +56,8 @@ class CalendarHelper {
         return mIntent
     }
 
-    /**
-     * Sets the date to be set in the calendar.
-     */
-    private fun createCalanderEvent(
+    /*** Sets the date to be set in the calendar.*/
+    private fun createCalenderEvent(
         sYear: Short, sDay : Short, sMonth : Short, sHour: Byte, sMin: Byte,
         eYear: Short, eDay : Short, eMonth : Short, eHour: Byte, eMin: Byte
     ) : Boolean{

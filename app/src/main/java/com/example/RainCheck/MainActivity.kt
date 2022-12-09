@@ -1,14 +1,17 @@
 package com.example.raincheck
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.AsyncTask
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.raincheck.*
@@ -16,22 +19,24 @@ import com.google.android.material.navigation.NavigationView
 import org.json.JSONObject
 import java.net.URL
 
+
 class MainActivity : AppCompatActivity() {
     lateinit var location: EditText
     lateinit var update: Button
     lateinit var cancel: Button
     var city: String = "New York"
-    val key: String = "af2b0e768df989c01f51e780365ff8d3"
     lateinit var iconView: ImageView
     lateinit var clock: TextClock
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
+    lateinit var preferences: SharedPreferences
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         /** Weather Implementation*/
 
         location = findViewById(R.id.editTxt1)
@@ -78,23 +83,49 @@ class MainActivity : AppCompatActivity() {
             it.isChecked = true
 
             var intentMain = Intent(this, MainActivity::class.java)
-            var intentCalendar = Intent(this, CalanderActivity::class.java)
+            var intentCalendar = Intent(this, CalendarActivity::class.java)
             var intentHelp = Intent(this, HelpActivity::class.java)
+
 
             when (it.itemId) {
                 R.id.nav_home -> startActivity(intentMain)
-                R.id.nav_appointment -> replaceFragment(AppointmentFragment(), it.title.toString())
+                R.id.nav_appointment -> openCalendar()
                 R.id.nav_calendar -> startActivity(intentCalendar)
-                R.id.nav_contact -> replaceFragment(ContactFragment(), it.title.toString())
-                R.id.nav_notification -> replaceFragment(
-                    NotificationFragment(),
-                    it.title.toString()
-                )
+                R.id.nav_contact -> openContact()
+                R.id.nav_notification -> openNotification()
                 R.id.nav_settings -> replaceFragment(SettingsFragment(), it.title.toString())
                 R.id.nav_help -> startActivity(intentHelp)
+                R.id.nav_logout -> clearLogout()
             }
             true
         }
+    }
+
+    /** Function, opens google calendar app*/
+    private fun openCalendar() {
+        val intentCalendar = Intent(Intent.ACTION_MAIN)
+        intentCalendar.addCategory(Intent.CATEGORY_APP_CALENDAR)
+        startActivity(Intent.createChooser(intentCalendar, "Calendar"))
+    }
+
+    /** Function, starts gmail app*/
+    private fun openNotification() {
+        val intentGmail = Intent(Intent.ACTION_MAIN)
+        intentGmail.addCategory(Intent.CATEGORY_APP_EMAIL)
+        startActivity(Intent.createChooser(intentGmail, "Email"))
+    }
+
+    /** Function, starts contacts app*/
+    private fun openContact() {
+        val intentContact = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
+        startActivity(intentContact)
+    }
+
+    /** Function, logs user out*/
+    private fun clearLogout() {
+        var intentLogout = Intent(this, LoginActivity::class.java)
+        startActivity(intentLogout)
+        finish()
     }
 
     /** Function calls fragment manager*/

@@ -6,10 +6,14 @@ package com.example.raincheck
 /**
  *
  */
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.raincheck.LoginActivity
 import com.example.raincheck.databinding.ActivityRegisterBinding
@@ -17,7 +21,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+
 class RegisterActivity : AppCompatActivity() {
+
 
     /*** Firebase attributes.*/
     private lateinit var firebaseAuth: FirebaseAuth
@@ -39,18 +45,16 @@ class RegisterActivity : AppCompatActivity() {
 
         /*** Return to the login page.*/
         this.binding.returnButton.setOnClickListener {
-
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
         /*** Create the rainCheck account with the entered credentials.*/
         this.binding.createAccountButton.setOnClickListener {
-
             this.createAccount()
         }
     }
 
-    /*** Create new account with user entered credentials.*/
+    /*** Create new account with user's entered credentials.*/
     fun createAccount(): Boolean{
 
         val userName = this.binding.userNameEditText.text.toString()
@@ -67,13 +71,13 @@ class RegisterActivity : AppCompatActivity() {
 
         if(password != this.binding.conformPasswordEditText.text.toString()){
 
-            Toast.makeText(this, "Passwords to not match.",
+            Toast.makeText(this, "Passwords do not match.",
                 Toast.LENGTH_SHORT).show()
 
             return false
         }
 
-        /*** Cheek if the user is not logged into the database.*/
+        /*** Check if the user is not logged into the database.*/
         val currentUser = this.firebaseAuth.currentUser
         if(currentUser != null) Log.e(this.TAG, "Nope")
 
@@ -84,7 +88,9 @@ class RegisterActivity : AppCompatActivity() {
 
                 // Sign in success, update UI with the signed-in user's information
                 Log.d(TAG, "createUserWithEmail:success")
-                startActivity(Intent(this, SplashScreen::class.java))
+
+                Toast.makeText(this, "Account Creation Successful", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginActivity::class.java))
 
             } else {
 
