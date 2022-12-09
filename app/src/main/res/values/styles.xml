@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="RainCheckTheme" parent="android:ThemeOverlay.Material.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryLight</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="RainCheckThemeDark" parent="android:ThemeOverlay.Material.Dark">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="actionButton">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="textColor">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+</resources>

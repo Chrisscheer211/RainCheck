@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Theme.RainCheck"
     android:orientation="vertical"
     android:layout_marginTop="16dp"
     android:layout_marginStart="16dp">
@@ -9,8 +11,8 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/ic_baseline_account_circle_24"
-        />
+        android:src="@drawable/box" />
+
     
 <TextView
     android:id="@+id/user_name"
@@ -18,8 +20,9 @@
     android:layout_height="wrap_content"
     android:paddingTop="8dp"
     android:textSize="20dp"
-    android:text="Default Name"
-    android:textColor="@color/drwer_font"
+    android:text="New User"
+    android:textColor="@color/colorAccent"
+
     android:textStyle="bold" />
 
     <TextView
@@ -28,6 +31,7 @@
         android:layout_height="wrap_content"
         android:textSize="16dp"
         android:text="email@gmail.com"
-        android:textColor="@color/drwer_font"/>
+        android:textColor="@color/colorAccent"
+/>
 
 </LinearLayout>

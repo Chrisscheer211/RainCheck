@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/material_dynamic_primary10"
+    android:background="@color/colorPrimaryDark"
     tools:context=".CalendarActivity">
 
     <!-- Displays the selected date. -->
@@ -26,7 +26,7 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     </CalendarView>
 
@@ -37,7 +37,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
         android:text="Create Event"
-        android:backgroundTint="@color/drwer_bg"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_gravity="center"/>
 
     <Button
@@ -46,7 +46,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:text="Go Back"
-        android:backgroundTint="@color/drwer_bg"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_gravity="center"/>
 
 </LinearLayout>

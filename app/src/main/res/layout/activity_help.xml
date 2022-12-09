@@ -4,16 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/RainCheckTheme"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    android:background="@color/material_dynamic_primary10"
     tools:context=".HelpActivity">
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/RainCheckTheme"
+        android:backgroundTint="@color/colorPrimary"
+        android:drawableLeft="@drawable/ic_baseline_undo_24"
+        android:drawableTint="@color/white"
+        android:text="Back"
+        app:tint="@color/white" />
 
     <!-- Displays frequently asked questions. -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_weight="0.5"
         tools:itemCount="2"
         tools:listitem="@layout/question">
 
@@ -24,58 +37,52 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="center"
+        style="@style/RainCheckTheme"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="horizontal">
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.0625"/>
+            android:layout_weight="0.0625" />
 
         <ImageView
             android:id="@+id/supportNumber_imageView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.125"
-            app:tint="@color/purple_700"
-            android:src="@drawable/ic_baseline_local_phone_24"/>
+            android:src="@drawable/ic_baseline_local_phone_24"
+            app:tint="@color/colorAccent" />
 
         <TextView
             android:id="@+id/supportNumber_textView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.50"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:gravity="center"
-            android:text="@string/supportPhoneNumber"/>
+            android:text="@string/supportPhoneNumber"
+            android:textColor="@color/colorAccent"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.0625"/>
-
-        <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.125"
-            app:tint="@color/purple_700"
-            android:src="@drawable/ic_baseline_undo_24"/>
+            android:layout_weight="0.0625" />
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.0625"/>
+            android:layout_weight="0.0625" />
 
         <ImageView
             android:id="@+id/supportEmail_imageView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.125"
-            app:tint="@color/purple_700"
-            android:src="@drawable/ic_baseline_email_24"/>
+            android:src="@drawable/ic_baseline_email_24"
+            app:tint="@color/colorAccent" />
 
         <TextView
             android:id="@+id/supportEmail_textView"
@@ -84,14 +91,14 @@
             android:layout_weight="0.50"
             android:gravity="center"
             android:text="@string/supportEmail"
-            android:textColor="@color/white"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp"
             android:textStyle="bold" />
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.0625"/>
+            android:layout_weight="0.0625" />
 
     </LinearLayout>
 

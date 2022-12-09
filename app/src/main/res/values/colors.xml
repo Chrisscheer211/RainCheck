@@ -10,6 +10,8 @@
     <color name="blue">#00008B</color>
 
     <!-- Navigation Drawer Menu Colors -->
-    <color name="drwer_bg">#0842a0</color>
-    <color name="drwer_font">#DDD</color>
+    <color name="colorPrimary">#0842a0</color>
+    <color name="colorPrimaryLight">#E1EDF3</color>
+    <color name="colorPrimaryDark">#FF001E2C</color>
+    <color name="colorAccent">#FFFFFFFF</color>
 </resources>

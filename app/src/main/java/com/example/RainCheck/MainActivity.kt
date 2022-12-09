@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
             var intentMain = Intent(this, MainActivity::class.java)
             var intentCalendar = Intent(this, CalendarActivity::class.java)
             var intentHelp = Intent(this, HelpActivity::class.java)
+            var intentSettings = Intent(this, SettingsActivity::class.java)
 
 
             when (it.itemId) {
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_calendar -> startActivity(intentCalendar)
                 R.id.nav_contact -> openContact()
                 R.id.nav_notification -> openNotification()
-                R.id.nav_settings -> replaceFragment(SettingsFragment(), it.title.toString())
+                R.id.nav_settings -> startActivity(intentSettings)
                 R.id.nav_help -> startActivity(intentHelp)
                 R.id.nav_logout -> clearLogout()
             }

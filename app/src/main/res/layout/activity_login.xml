@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    style="@style/RainCheckTheme"
+    android:background="@color/colorPrimaryLight"
     tools:context=".LoginActivity">
 
     <Space
@@ -20,14 +21,16 @@
         android:layout_gravity="center"
         android:layout_weight="0.5"
         app:srcCompat="@drawable/rainchecktransparent"
-        app:tint="@color/drwer_bg" />
+        style="@style/RainCheckTheme"
+        app:tint="@color/colorPrimary" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="50dp"
-        android:textColor="@color/drwer_bg"
+        style="@style/textColor"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_marginTop="15dp"
         android:text="Rain Check"/>
@@ -55,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/userName"
+            android:background="@color/colorAccent"
             android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -63,7 +67,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/PasswordLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:outlineSpotShadowColor="@color/purple_200"
+        android:outlineSpotShadowColor="@color/teal_700"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="25dp"
@@ -78,6 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/password"
+            android:background="@color/colorAccent"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -94,7 +99,7 @@
         android:layout_gravity="center"
         android:layout_height="50dp"
         android:layout_width="150dp"
-        android:backgroundTint="@color/drwer_bg"
+        android:backgroundTint="@color/colorPrimary"
         app:icon="@drawable/ic_baseline_login_24"
         app:iconGravity="start"
         android:text="@string/login"
@@ -118,7 +123,7 @@
             android:id="@+id/rainCheck_createAccount_button"
             android:layout_height="50dp"
             android:layout_width="150dp"
-            android:backgroundTint="@color/drwer_bg"
+            android:backgroundTint="@color/colorPrimary"
             app:icon="@drawable/ic_baseline_account_circle_24"
             app:iconGravity="start"
             android:text="@string/createAccount"

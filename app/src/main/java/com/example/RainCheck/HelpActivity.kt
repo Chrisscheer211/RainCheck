@@ -3,9 +3,6 @@
  */
 package com.example.raincheck
 
-/**
- *
- */
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
@@ -35,7 +32,7 @@ class HelpActivity : AppCompatActivity() {
         val questions = resources.getStringArray(R.array.Questions)
 
         /*** Sets the questions and answers.*/
-        for (i in 0..4){
+        for (i in 0..4) {
 
             data.add(Question(questions?.get(i).toString(), answers?.get(i).toString()))
         }
@@ -67,22 +64,21 @@ class HelpActivity : AppCompatActivity() {
         }
 
         /*** Gose back to the main activity.*/
-        this.binding.backButton.setOnClickListener{
-
+        this.binding.backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
     /*** Call the support number when clicked. */
-    private fun callSupport(): Boolean{
+    private fun callSupport(): Boolean {
 
-        startActivity(Intent(Intent.ACTION_DIAL,Uri.parse("tel:" + "6315441178")))
+        startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "6315441178")))
         return true
     }
 
     /*** Creates a email for the user to fill out and sent.*/
     @SuppressLint("IntentReset")
-    private fun sendEmail(): Boolean{
+    private fun sendEmail(): Boolean {
 
         val mIntent = Intent(Intent.ACTION_SEND)
 
@@ -97,8 +93,7 @@ class HelpActivity : AppCompatActivity() {
         try {
 
             startActivity(Intent.createChooser(mIntent, "Gmail"))
-        }
-        catch (e: Exception){
+        } catch (e: Exception) {
 
             Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
         }
